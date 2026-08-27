@@ -50,41 +50,59 @@
 
   </head>
   <body>
-    <!-- Header -->
-    <header id="main-header">
-      <div id="header-inner">
-        <div class="header-logo">
-          <a href="#" aria-label="العودة للصفحة الرئيسية">
-            <span class="logo-text">[اسم البراند]</span>
-          </a>
+<!-- Header -->
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="#" aria-label="العودة للصفحة الرئيسية">
+        <span class="header__logo-text">[اسم البراند]</span>
+      </a>
+    </div>
+
+    <div class="header__nav-wrapper">
+      <nav class="header__nav" aria-label="القائمة الرئيسية">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#hero" class="header__nav-link">الرئيسية</a></li>
+          <li class="header__nav-item"><a href="#howitwork" class="header__nav-link">كيف يعمل</a></li>
+          <li class="header__nav-item"><a href="#results" class="header__nav-link">النتائج</a></li>
+          <li class="header__nav-item"><a href="#pricing" class="header__nav-link">الأسعار</a></li>
+          <li class="header__nav-item"><a href="#about" class="header__nav-link">عن المدرب</a></li>
+          <li class="header__nav-item"><a href="#faq" class="header__nav-link">الأسئلة الشائعة</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__actions">
+      <button class="header__lang-toggle">
+        <svg aria-hidden="true" class="header__lang-icon icon">
+          <use href="/sprites/solid.svg#globe"></use>
+        </svg>
+        <div class="header__lang-texts">
+          <span class="header__lang-text header__lang-text--active">AR</span>
+          <span class="header__lang-text">EN</span>
         </div>
-        <div class="header-nav">
-          <nav id="main-nav" aria-label="القائمة الرئيسية">
-            <ul class="header-list">
-              <li class="header-nav-item" ><a href="#hero">الرئيسية</a></li>
-              <li class="header-nav-item" ><a href="#howitwork">كيف يعمل</a></li>
-              <li class="header-nav-item" ><a href="#results">النتائج</a></li>
-              <li class="header-nav-item" ><a href="#pricing">الأسعار</a></li>
-              <li class="header-nav-item" ><a href="#about">عن المدرب</a></li>
-              <li class="header-nav-item" ><a href="#faq">الأسئلة الشائعة</a></li>
-            </ul>
-        </div>
-        <div class="header-acions">
-          <button class="header-lang-toggle">
-            <svg aria-hidden="true" class="icon icon--header-globe"><use href="/sprites/solid.svg#globe"></use></svg></span> 
-            <div class="header-lang-texts">
-              <span class="header-lang-text header-lang-text--active">AR</span>
-              <span class="header-lang-text">EN</span>
-            </div>
-          </button>
-          <div class="header-cta-div"><a href="#pricing" class="header-cta">[CTA Text]</a></div>
-        </div>
-        <div class="header-hamburger">
-          <button type="button" class="hamburger-toggle" aria-label="فتح القائمة الجانبية" aria-expanded="false" aria-controls="sideMenu">
-            <svg aria-hidden="true" class="icon icon--hamburger"><use href="/sprites/solid.svg#bars"></use></svg></span> 
-          </button>
+      </button>
+
+      <div class="header__cta-wrapper">
+        <a href="#pricing" class="header__cta">[CTA Text]</a>
       </div>
-    </header>
+    </div>
+
+    <div class="header__hamburger">
+      <button
+        type="button"
+        class="header__hamburger-toggle"
+        aria-label="فتح القائمة الجانبية"
+        aria-expanded="false"
+        aria-controls="sideMenu"
+      >
+        <svg aria-hidden="true" class="header__hamburger-icon icon">
+          <use href="/sprites/solid.svg#bars"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
 
     <main id="main-content">
     <!-- hero -->
