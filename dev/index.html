@@ -73,7 +73,7 @@
     </div>
 
     <div class="header__actions">
-      <button class="header__lang-toggle">
+      <button type="button" class="header__lang-toggle">
         <svg aria-hidden="true" class="header__lang-icon icon">
           <use href="/sprites/solid.svg#globe"></use>
         </svg>
@@ -103,7 +103,52 @@
     </div>
   </div>
 </header>
+<aside class="mobile-nav" id="mobile-nav" hidden>
+  <div class="mobile-nav__inner">
+    <div class="mobile-nav__close">
+      <button class="mobile-nav__close-btn">
+        <svg class="icon icon--xmark" aria-hidden="true">
+          <use href="/sprites/solid.svg#xmark"></use>
+        </svg>
+      </button>
+    </div>
 
+    <div class="mobile-nav__nav-wrapper">
+      <nav class="mobile-nav__nav" aria-label="القائمة الرئيسية">
+        <ul class="mobile-nav__nav-list">
+          <li class="mobile-nav__nav-item"><a href="#hero" class="mobile-nav__nav-link">الرئيسية</a></li>
+          <li class="mobile-nav__nav-item"><a href="#howitwork" class="mobile-nav__nav-link">كيف يعمل</a></li>
+          <li class="mobile-nav__nav-item"><a href="#results" class="mobile-nav__nav-link">النتائج</a></li>
+          <li class="mobile-nav__nav-item"><a href="#pricing" class="mobile-nav__nav-link">الأسعار</a></li>
+          <li class="mobile-nav__nav-item"><a href="#about" class="mobile-nav__nav-link">عن المدرب</a></li>
+          <li class="mobile-nav__nav-item"><a href="#faq" class="mobile-nav__nav-link">الأسئلة الشائعة</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <button class="mobile-nav__lang-toggle" id="mobile-lang-toggle" aria-label="Switch language">
+      <div class="mobile-nav__lang-toggle-left">
+        <span class="mobile-nav__lang-icon" aria-hidden="true">
+          <svg class="icon icon--globe">
+            <use href="/sprites/solid.svg#globe"></use>
+          </svg>
+        </span>
+        <div class="mobile-nav__lang-text-group">
+          <span class="mobile-nav__lang-title">Language</span>
+          <span class="mobile-nav__lang-sub" id="mobile-lang-sub">Arabic / العربية</span>
+        </div>
+      </div>
+      <div class="mobile-nav__lang-badges">
+        <span class="mobile-nav__lang-badge" id="mobile-lang-badge-ar" data-lang="ar">AR</span>
+        <span class="mobile-nav__lang-badge" id="mobile-lang-badge-en" data-lang="en">EN</span>
+      </div>
+    </button>
+
+    <div class="mobile-nav__cta">
+      <a href="#cta" class="mobile-nav__cta-link">ابدأ تحولك</a>
+    </div>
+  </div>
+</aside>
     <main id="main-content">
     <!-- hero -->
       <section id="hero">
@@ -209,6 +254,6 @@
 
 
 <!-- 
-<svg aria-hidden="true" class="icon"><use href="/sprites/solid.svg#"></use></svg></span> 
+<svg aria-hidden="true" class="icon"><use href="/sprites/solid.svg#xmark"></use></svg></span> 
 <svg aria-hidden="true" class="icon"><use href="/sprites/brands.svg#"></use></svg></span> 
 -->
