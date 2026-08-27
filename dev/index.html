@@ -53,34 +53,25 @@
 <!-- Header -->
 <header class="header">
   <div class="header__inner">
+
     <div class="header__logo">
       <a href="#" aria-label="العودة للصفحة الرئيسية">
         <span class="header__logo-text">[اسم البراند]</span>
       </a>
     </div>
 
-    <div class="header__nav-wrapper">
-      <nav class="header__nav" aria-label="القائمة الرئيسية">
-        <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="#hero" class="header__nav-link">الرئيسية</a></li>
-          <li class="header__nav-item"><a href="#howitwork" class="header__nav-link">كيف يعمل</a></li>
-          <li class="header__nav-item"><a href="#results" class="header__nav-link">النتائج</a></li>
-          <li class="header__nav-item"><a href="#pricing" class="header__nav-link">الأسعار</a></li>
-          <li class="header__nav-item"><a href="#about" class="header__nav-link">عن المدرب</a></li>
-          <li class="header__nav-item"><a href="#faq" class="header__nav-link">الأسئلة الشائعة</a></li>
-        </ul>
-      </nav>
-    </div>
-
     <div class="header__actions">
-      <button type="button" class="header__lang-toggle">
-        <svg aria-hidden="true" class="header__lang-icon icon">
-          <use href="/sprites/solid.svg#globe"></use>
+      <button
+        type="button"
+        class="header__menu-toggle"
+        aria-label="فتح القائمة"
+        aria-expanded="false"
+        aria-controls="sideMenu"
+      >
+        <svg aria-hidden="true" class="header__menu-icon icon">
+          <use href="/sprites/solid.svg#bars"></use>
         </svg>
-        <div class="header__lang-texts">
-          <span class="header__lang-text header__lang-text--active">AR</span>
-          <span class="header__lang-text">EN</span>
-        </div>
+        <span class="header__menu-text">القائمة</span>
       </button>
 
       <div class="header__cta-wrapper">
@@ -88,65 +79,55 @@
       </div>
     </div>
 
-    <div class="header__hamburger"> <!-- يظهر فقط على الهواتف -->
-      <button
-        type="button"
-        class="header__hamburger-toggle"
-        aria-label="فتح القائمة الجانبية"
-        aria-expanded="false"
-        aria-controls="sideMenu"
-      >
-        <svg aria-hidden="true" class="header__hamburger-icon icon">
-          <use href="/sprites/solid.svg#bars"></use>
-        </svg>
-      </button>
-    </div>
   </div>
 </header>
-<aside class="mobile-nav" id="mobile-nav" hidden>
-  <div class="mobile-nav__inner">
-    <div class="mobile-nav__close">
-      <button class="mobile-nav__close-btn">
+
+<aside class="side-menu" id="sideMenu" hidden>
+  <div class="side-menu__inner">
+
+    <div class="side-menu__close">
+      <button class="side-menu__close-btn" aria-label="إغلاق القائمة">
         <svg class="icon icon--xmark" aria-hidden="true">
           <use href="/sprites/solid.svg#xmark"></use>
         </svg>
       </button>
     </div>
 
-    <div class="mobile-nav__nav-wrapper">
-      <nav class="mobile-nav__nav" aria-label="القائمة الرئيسية">
-        <ul class="mobile-nav__nav-list">
-          <li class="mobile-nav__nav-item"><a href="#hero" class="mobile-nav__nav-link">الرئيسية</a></li>
-          <li class="mobile-nav__nav-item"><a href="#howitwork" class="mobile-nav__nav-link">كيف يعمل</a></li>
-          <li class="mobile-nav__nav-item"><a href="#results" class="mobile-nav__nav-link">النتائج</a></li>
-          <li class="mobile-nav__nav-item"><a href="#pricing" class="mobile-nav__nav-link">الأسعار</a></li>
-          <li class="mobile-nav__nav-item"><a href="#about" class="mobile-nav__nav-link">عن المدرب</a></li>
-          <li class="mobile-nav__nav-item"><a href="#faq" class="mobile-nav__nav-link">الأسئلة الشائعة</a></li>
+    <div class="side-menu__nav-wrapper">
+      <nav class="side-menu__nav" aria-label="القائمة الرئيسية">
+        <ul class="side-menu__nav-list">
+          <li class="side-menu__nav-item"><a href="#hero" class="side-menu__nav-link">الرئيسية</a></li>
+          <li class="side-menu__nav-item"><a href="#howitwork" class="side-menu__nav-link">كيف يعمل</a></li>
+          <li class="side-menu__nav-item"><a href="#results" class="side-menu__nav-link">النتائج</a></li>
+          <li class="side-menu__nav-item"><a href="#pricing" class="side-menu__nav-link">الأسعار</a></li>
+          <li class="side-menu__nav-item"><a href="#about" class="side-menu__nav-link">عن المدرب</a></li>
+          <li class="side-menu__nav-item"><a href="#faq" class="side-menu__nav-link">الأسئلة الشائعة</a></li>
         </ul>
       </nav>
     </div>
 
-    <button class="mobile-nav__lang-toggle" id="mobile-lang-toggle" aria-label="Switch language">
-      <div class="mobile-nav__lang-toggle-left">
-        <span class="mobile-nav__lang-icon" aria-hidden="true">
+    <button class="side-menu__lang-toggle" id="side-menu-lang-toggle" aria-label="Switch language">
+      <div class="side-menu__lang-toggle-left">
+        <span class="side-menu__lang-icon" aria-hidden="true">
           <svg class="icon icon--globe">
             <use href="/sprites/solid.svg#globe"></use>
           </svg>
         </span>
-        <div class="mobile-nav__lang-text-group">
-          <span class="mobile-nav__lang-title">Language</span>
-          <span class="mobile-nav__lang-sub" id="mobile-lang-sub">Arabic / العربية</span>
+        <div class="side-menu__lang-text-group">
+          <span class="side-menu__lang-title">Language</span>
+          <span class="side-menu__lang-sub" id="side-menu-lang-sub">Arabic / العربية</span>
         </div>
       </div>
-      <div class="mobile-nav__lang-badges">
-        <span class="mobile-nav__lang-badge" id="mobile-lang-badge-ar" data-lang="ar">AR</span>
-        <span class="mobile-nav__lang-badge" id="mobile-lang-badge-en" data-lang="en">EN</span>
+      <div class="side-menu__lang-badges">
+        <span class="side-menu__lang-badge" id="side-menu-lang-badge-ar" data-lang="ar">AR</span>
+        <span class="side-menu__lang-badge" id="side-menu-lang-badge-en" data-lang="en">EN</span>
       </div>
     </button>
 
-    <div class="mobile-nav__cta">
-      <a href="#cta" class="mobile-nav__cta-link">ابدأ تحولك</a>
+    <div class="side-menu__cta">
+      <a href="#cta" class="side-menu__cta-link">ابدأ تحولك</a>
     </div>
+
   </div>
 </aside>
     <main id="main-content">
