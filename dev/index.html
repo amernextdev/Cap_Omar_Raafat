@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <div class="header__hamburger">
+    <div class="header__hamburger"> <!-- يظهر فقط على الهواتف -->
       <button
         type="button"
         class="header__hamburger-toggle"
@@ -152,6 +152,19 @@
     <main id="main-content">
     <!-- hero -->
       <section id="hero">
+        <div class="hero-inner">
+          <picture>
+              <source srcset="src/assets/images" type="image/avif">
+              <source srcset="src/assets/images" type="image/webp">
+              <img src="src/assets/images/"
+                  class="hero-bg-img" alt="خلفية الهيرو" loading="eager">
+          </picture>
+          <div class="fg-mid">
+            <h1 class="fg-headline">أقوى<br>كل<br><span class="accent">يوم.</span></h1>
+            <p class="fg-desc">تدريب شخصي لنتائج حقيقية وملموسة — في الجيم أو أونلاين.</p>
+            <a href="#pricing" class="fg-cta">ابدأ رحلتك ←</a>
+          </div>
+        </div>
       </section>
     <!-- Problem -->
       <section id="problem">
