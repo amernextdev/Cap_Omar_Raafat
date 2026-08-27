@@ -62,17 +62,20 @@
     <!-- Problem -->
       <section id="problem">
       </section>
-    <!-- How -->
-      <section id="how">
-      </section>
     <!-- Offer -->
       <section id="offer">
+      </section>
+    <!-- How -->
+      <section id="how">
       </section>
     <!-- Results -->
       <section id="results">
       </section>
     <!-- Pricing -->
       <section id="pricing">
+      </section>
+    <!-- About -->
+      <section id="about">
       </section>
     <!-- FAQ -->
       <section id="faq">
@@ -83,6 +86,73 @@
     <footer id="main-footer">
 
     </footer>
+
+    <div class="floating-actions">
+  <button type="button"
+          class="floating-toggle"
+          aria-label="فتح خيارات التواصل"
+          aria-expanded="false"
+          aria-controls="floatingActionsMenu">
+    <!-- أيقونة -->
+  </button>
+
+  <div class="floating-actions-menu" id="floatingActionsMenu" hidden>
+
+    <ul class="floating-actions-top">
+      <li>
+        <a href="https://wa.me/20XXXXXXXXXX"
+           target="_blank" rel="noopener noreferrer"
+           class="floating-action whatsapp-action"
+           aria-label="تواصل عبر واتساب">
+          <!-- أيقونة واتساب -->
+        </a>
+      </li>
+      <li>
+        <button type="button"
+                class="floating-action social-action"
+                aria-haspopup="true"
+                aria-controls="socialPanel"
+                aria-expanded="false"
+                aria-label="عرض جميع حسابات التواصل الاجتماعي">
+          <!-- أيقونة السوشيال -->
+        </button>
+      </li>
+    </ul>
+
+    <button type="button"
+            class="floating-action chatbot-action"
+            aria-haspopup="dialog"
+            aria-controls="chatbotModal"
+            aria-expanded="false"
+            aria-label="فتح المحادثة مع المساعد الآلي">
+      <!-- أيقونة الشات بوت -->
+    </button>
+
+  </div>
+</div>
+
+<!-- panel السوشيال -->
+<div class="social-panel"
+     id="socialPanel"
+     role="menu"
+     aria-hidden="true"
+     hidden>
+  <!-- روابط حسابات التواصل الاجتماعي -->
+  <a href="https://facebook.com/..." role="menuitem" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://instagram.com/..." role="menuitem" target="_blank" rel="noopener noreferrer">Instagram</a>
+  <!-- ... -->
+</div>
+
+<!-- مودال الشات بوت -->
+<div class="chatbot-modal"
+     id="chatbotModal"
+     role="dialog"
+     aria-modal="true"
+     aria-hidden="true"
+     hidden>
+  <!-- محتوى الشات بوت -->
+</div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
