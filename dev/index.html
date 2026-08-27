@@ -27,7 +27,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/icons/favicon-16x16.png">
   <link rel="icon" type="image/svg+xml" href="/src/assets/icons/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/icons/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
  
   <!-- ===== Open Graph (فيسبوك / واتساب / لينكدإن) ===== -->
   <meta property="og:type" content="website">
@@ -100,7 +99,7 @@
           <li class="side-menu__nav-item"><a href="#howitwork" class="side-menu__nav-link">كيف يعمل</a></li>
           <li class="side-menu__nav-item"><a href="#results" class="side-menu__nav-link">النتائج</a></li>
           <li class="side-menu__nav-item"><a href="#pricing" class="side-menu__nav-link">الأسعار</a></li>
-          <li class="side-menu__nav-item"><a href="#about" class="side-menu__nav-link">عن المدرب</a></li>
+          <!-- <li class="side-menu__nav-item"><a href="#about" class="side-menu__nav-link">عن المدرب</a></li> --> <!--تعليق السطر مقصود-->
           <li class="side-menu__nav-item"><a href="#faq" class="side-menu__nav-link">الأسئلة الشائعة</a></li>
         </ul>
       </nav>
@@ -131,24 +130,73 @@
   </div>
 </aside>
     <main id="main-content">
-    <!-- hero -->
-      <section id="hero">
-        <div class="hero-inner">
-          <picture>
-              <source srcset="src/assets/images" type="image/avif">
-              <source srcset="src/assets/images" type="image/webp">
-              <img src="src/assets/images/"
-                  class="hero-bg-img" alt="خلفية الهيرو" loading="eager">
-          </picture>
-          <div class="fg-mid">
-            <h1 class="fg-headline">أقوى<br>كل<br><span class="accent">يوم.</span></h1>
-            <p class="fg-desc">تدريب شخصي لنتائج حقيقية وملموسة — في الجيم أو أونلاين.</p>
-            <a href="#pricing" class="fg-cta">ابدأ رحلتك ←</a>
-          </div>
+      <!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+
+    <!-- خلفية الهيرو -->
+    <picture class="hero__background">
+      <source srcset="src/assets/images/hero-bg.avif" type="image/avif">
+      <source srcset="src/assets/images/hero-bg.webp" type="image/webp">
+      <img
+        src="src/assets/images/hero-bg.jpg"
+        class="hero__background-img"
+        alt="خلفية الهيرو"
+        loading="eager"
+        decoding="async"
+      >
+    </picture>
+
+    <!-- المحتوى الأساسي: العنوان + الوصف + CTA -->
+    <div class="hero__main">
+      <h1 class="hero__title">
+        [السطر الأول من العنوان]<br>
+        [السطر الثاني من العنوان]<br>
+        <span class="hero__title-accent">[الكلمة المميزة]</span>
+      </h1>
+
+      <p class="hero__description">[وصف مختصر عن الخدمة أو المنتج]</p>
+
+      <a href="#" class="hero__cta">
+        [نص زر الدعوة للإجراء]
+        <span class="hero__cta-icon" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- لوحة الإحصائيات -->
+    <ul class="hero__stats" id="stats">
+
+      <li class="hero__stat" data-delay="0">
+        <span class="hero__stat-badge">[رقم/رمز 1]</span>
+        <div class="hero__stat-body">
+          <h3 class="hero__stat-title">[اسم الإحصائية الأولى]</h3>
+          <p class="hero__stat-description">[شرح قصير للإحصائية الأولى]</p>
         </div>
-      </section>
+      </li>
+
+      <li class="hero__stat" data-delay="1">
+        <span class="hero__stat-badge">[رقم/رمز 2]</span>
+        <div class="hero__stat-body">
+          <h3 class="hero__stat-title">[اسم الإحصائية الثانية]</h3>
+          <p class="hero__stat-description">[شرح قصير للإحصائية الثانية]</p>
+        </div>
+      </li>
+
+      <li class="hero__stat" data-delay="2">
+        <span class="hero__stat-badge">[رقم/رمز 3]</span>
+        <div class="hero__stat-body">
+          <h3 class="hero__stat-title">[اسم الإحصائية الثالثة]</h3>
+          <p class="hero__stat-description">[شرح قصير للإحصائية الثالثة]</p>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
     <!-- Problem -->
       <section id="problem">
+
       </section>
     <!-- Offer -->
       <section id="offer">
