@@ -9,13 +9,19 @@
  ==============*/
 @import '/src/components/header/header.css';
 @import '/src/components/hero/hero.css';
+@import "/src/components/problem/problem.css";
+@import "/src/components/how-it-works/how-it-works.css";
+@import "/src/components/offer/offer.css";
+@import "/src/components/transforms/transforms.css";
+@import "/src/components/testimonials/testimonials.css";
+@import "/src/components/pricing/pricing.css";
+@import "/src/components/about/about.css";
+@import "/src/components/faq/faq.css";
+@import "/src/components/cta/cta.css";
+@import "/src/components/footer/footer.css";
+@import "/src/components/floating-actions/floating-actions.css";
 @import '/src/components/chatbot/chatbot.css';
 
-
-@import './main.css';
-.mb-launcher {
-  display: none !important;
-}
 
 
 /* ============================================================
@@ -227,4 +233,12 @@ h1, h2, h3 {
   width: 1.25em;
   height: 1.25em;
   fill: currentColor;
+}
+
+.mb-launcher {
+  display: none !important;
+}
+
+html, body {
+  overflow-x: hidden !important;
 }

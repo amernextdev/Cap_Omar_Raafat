@@ -6,11 +6,16 @@
    - متغيرات variables.css: --space-*, --z-base, --color-*, --fs-*,
      --lh-tight, --radius-*, --control-height-lg, --fw-semibold,
      --shadow-accent-glow, --transition-fast/slow
-   - متغيرات من style.css: --pattern-tape (مستخدمة في .hero__stats::before)،
-     --size-badge (مقاس شارة .hero__stat-badge)
+   - متغيرات من style.css: --size-badge (مقاس شارة .hero__stat-badge)
    - .hero__inner: الـ max-width والـ padding-inline بتاعتها معرّفين أصلاً
-     في style.css ضمن قائمة الحاويات العامة — هنا بس تخطيط الفليكس
-     الخاص بالهيرو (flex-direction, align-items, gap...)
+     في style.css ضمن قائمة الحاويات العامة — هنا بس تخطيط الفليكس/الجريد
+     الخاص بالهيرو (flex-direction, grid-template-columns, align-items...)
+
+   التخطيط:
+   - Mobile: عمودي بالكامل (نصوص فوق، الإحصائيات تحتها كروت مكدّسة)
+   - Desktop (1024px+): صفّين جنب بعض — النصوص من بداية السطر (يمين/شمال
+     حسب dir)، والإحصائيات في الجانب التاني كـ كروت مستطيلة شفافة نسبيًا
+     مكدّسة تحت بعضها، عشان صورة الخلفية تفضل بايّنة وراهم
    ================================================================ */
 
 .hero {
@@ -47,19 +52,33 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-9);
+  align-items: flex-start;
+  text-align: start;
+  gap: var(--space-8);
   padding-top: var(--space-9);
+}
+
+@media (min-width: 1024px) {
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    align-items: center;
+    gap: var(--space-10);
+  }
 }
 
 .hero__main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  text-align: start;
   gap: var(--space-5);
-  max-width: 44rem;
+  max-width: 34rem;
   animation: heroRise var(--transition-slow) both;
+}
+
+@media (min-width: 1024px) {
+  .hero__main { max-width: none; }
 }
 
 @keyframes heroRise {
@@ -73,8 +92,8 @@
 }
 
 .hero__title-accent {
-  color: var(--color-bg);
-  background: var(--color-accent-secondary);
+  color: var(--color-accent);
+  /* background: var(--color-accent-secondary); */
   padding-inline: var(--space-2);
   border-radius: var(--radius-sm);
   box-decoration-break: clone;
@@ -127,38 +146,35 @@
   transform: translateX(-4px);
 }
 
-/* لوحة الإحصائيات — بطاقة عائمة بحافة "شريط قياس" علوية */
+/* عمود الإحصائيات — كروت مستقلة مكدّسة تحت بعضها (نفس الترتيب على
+   الموبايل والديسكتوب)، وبس مكان العمود نفسه بينتقل من تحت النصوص
+   (موبايل) لجنب النصوص (ديسكتوب) عن طريق .hero__inner فوق */
 .hero__stats {
   width: 100%;
-  max-width: 56rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-5);
-  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6) var(--space-5);
-  position: relative;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-.hero__stats::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  inset-inline: var(--space-5);
-  height: 3px;
-  background-image: var(--pattern-tape);
+@media (min-width: 1024px) {
+  .hero__stats { justify-self: start; }
 }
 
-@media (min-width: 640px) {
-  .hero__stats { grid-template-columns: repeat(3, 1fr); }
-}
-
+/* كارت مستطيل بسيط — خلفية شفافة نسبيًا عشان صورة الهيرو تفضل بايّنة وراه.
+   justify-content: space-between عشان البادچ يتفتح لأقصى الطرف المقابل
+   للنص بدل ما يفضل عالق جنبه بمسافة الـ gap بس */
 .hero__stat {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-surface) 55%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 55%, transparent);
   opacity: 0;
   animation: heroRise var(--transition-slow) forwards;
 }
@@ -194,4 +210,94 @@
   font-size: var(--fs-xs);
   color: var(--color-text-muted);
   margin-top: var(--space-1);
+}
+
+
+
+@media (max-width: 1023.98px) {
+
+  .hero {
+    padding-top: var(--space-12);
+    min-height: calc(100svh - var(--header-height, 4.5rem));
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__inner {
+    padding-top: 0;
+    gap: var(--space-5);
+    width: 100%;
+  }
+
+  .hero__main {
+    display: contents;
+  }
+
+  .hero__title {
+    order: 1;
+    animation: heroRise var(--transition-slow) both;
+  }
+
+  .hero__description {
+    order: 2;
+    animation: heroRise var(--transition-slow) both;
+    animation-delay: 80ms;
+  }
+
+  .hero__cta {
+    order: 3;
+    align-self: center;
+    margin-inline: auto;
+    margin-top: var(--space-2);
+    animation: heroRise var(--transition-slow) both;
+    animation-delay: 140ms;
+  }
+
+  .hero__stats {
+    order: 4;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: none;
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+  }
+
+  .hero__stat {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-2);
+  }
+
+  .hero__stat-badge {
+    order: -1;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: var(--fs-sm);
+  }
+
+  .hero__stat-body { text-align: center; }
+
+  .hero__stat-title {
+    font-size: 0.6875rem;
+    line-height: 1.25;
+  }
+
+  .hero__stat-description {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero__title {
+    font-size: var(--fs-2xl);
+  }
+
+  .hero__description {
+    font-size: var(--fs-sm);
+  }
 }

@@ -146,21 +146,21 @@
          استخدمنا loading="eager" و fetchpriority="high" لتسريع ظهورها.
     ====================================================================== -->
     <section class="hero" id="hero">
-      <div class="hero__inner">
 
-        <!-- خلفية الهيرو: صورة تجميلية بحتة، لذلك alt فارغ ومخفية عن قارئ الشاشة -->
-        <picture class="hero__background" aria-hidden="true">
-          <source srcset="src/assets/images/hero-bg.avif" type="image/avif">
-          <source srcset="src/assets/images/hero-bg.webp" type="image/webp">
-          <img
-            src="src/assets/images/hero-bg.jpg"
-            class="hero__background-img"
-            alt=""
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          >
-        </picture>
+      <picture class="hero__background" aria-hidden="true">
+        <source srcset="src/assets/images/hero-bg.avif" type="image/avif">
+        <source srcset="src/assets/images/hero-bg.webp" type="image/webp">
+        <img
+          src="src/assets/images/hero-bg.jpg"
+          class="hero__background-img"
+          alt="Hero Background"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
+
+      <div class="hero__inner">
 
         <!-- المحتوى الأساسي: العنوان + الوصف + زر الدعوة للإجراء -->
         <div class="hero__main">
@@ -182,27 +182,29 @@
         <ul class="hero__stats" id="hero-stats">
 
           <li class="hero__stat" data-delay="0">
-            <span class="hero__stat-badge">+5</span>
             <div class="hero__stat-body">
               <h3 class="hero__stat-title">سنين خبرة</h3>
               <p class="hero__stat-description">في التدريب الأونلاين من الألف للياء</p>
             </div>
+            <span class="hero__stat-badge">+5</span>
+
           </li>
 
           <li class="hero__stat" data-delay="1">
-            <span class="hero__stat-badge">+300</span>
             <div class="hero__stat-body">
               <h3 class="hero__stat-title">متدرب</h3>
               <p class="hero__stat-description">وصلوا لهدفهم من كل حتة في العالم</p>
             </div>
+            <span class="hero__stat-badge">+300</span>
+
           </li>
 
           <li class="hero__stat" data-delay="2">
-            <span class="hero__stat-badge">90%</span>
             <div class="hero__stat-body">
               <h3 class="hero__stat-title">نسبة نجاح</h3>
               <p class="hero__stat-description">من عملائنا حققوا الهدف اللي حطوه</p>
             </div>
+            <span class="hero__stat-badge">90%</span>
           </li>
 
         </ul>
