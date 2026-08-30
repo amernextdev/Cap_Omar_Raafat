@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "botName": "المساعد الذكي",
+    "onlineLabel": "متاح دلوقتي",
+    "avatarInitial": "ا",
+    "typingDelayMs": 600,
+    "homeLabel": "🏠 القائمة الرئيسية",
+    "backLabel": "⬅️ رجوع",
+    "rootNodeId": "main",
+    "mode": "floating",
+    "direction": "rtl",
+    "floatCorner": "right",
+    "launcherIcon": "💬",
+    "whatsappLink": "",
+    "disclaimer": ""
+  },
+  "nodes": {
+    "main": {
+      "type": "menu",
+      "parent": null,
+      "botMessage": "أهلاً بيك 👋\nاختار من تحت عشان أقدر أساعدك:",
+      "options": [
+        { "label": "مين احنا؟", "target": "about" },
+        { "label": "الأسئلة الشائعة", "target": "faq" },
+        { "label": "تواصل معانا", "target": "contact" }
+      ]
+    },
+    "about": {
+      "type": "leaf",
+      "parent": "main",
+      "botMessage": "اكتب هنا نبذة عن مشروعك أو خدمتك."
+    },
+    "faq": {
+      "type": "menu",
+      "parent": "main",
+      "botMessage": "دي أكتر الأسئلة اللي بتتسأل:",
+      "options": [
+        { "label": "سؤال تجريبي 1", "target": "faq_1" }
+      ]
+    },
+    "faq_1": {
+      "type": "leaf",
+      "parent": "faq",
+      "botMessage": "اكتب هنا إجابة السؤال."
+    },
+    "contact": {
+      "type": "leaf",
+      "parent": "main",
+      "botMessage": "تواصل معانا دلوقتي:",
+      "cta": {
+        "label": "📲 تواصل على واتساب",
+        "url": "{{whatsappLink}}"
+      }
+    }
+  }
+}
