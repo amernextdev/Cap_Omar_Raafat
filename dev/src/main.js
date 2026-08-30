@@ -17,6 +17,7 @@ import botDataJson from '/src/data/chatbot-data.json';
 // ==============
 // import '/src/components/header/header.js';
 import { MenuBot } from '/src/components/chatbot/chatbot.js';
+import '/src/components/hero/hero.js';
 
 
 // ==============

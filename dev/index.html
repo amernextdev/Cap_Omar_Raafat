@@ -47,23 +47,6 @@
   <meta name="twitter:description" content="خطة أكل وتمرين مخصصة بالكامل ليك، بمتابعة أسبوعية حقيقية على الواتساب.">
   <meta name="twitter:image" content="https://raafatcoaching.com/src/assets/images/social-share.jpg">
 
-  <!-- =====================================================================
-       بيانات منظَّمة (JSON-LD) — اختياري لكنه يحسّن ظهور الصفحة في نتائج
-       البحث (Rich Results). عبّي القيم الحقيقية قبل النشر أو احذف الكتلة
-       لو مش هتستخدمها.
-  ====================================================================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Raafat Coaching",
-    "description": "مدرب لياقة بدنية أونلاين متخصص في تخسيس ونحت الجسم وبناء العضلات، بخطط أكل وتمرين مخصصة بالكامل ومتابعة أسبوعية حقيقية.",
-    "url": "https://raafatcoaching.com/",
-    "image": "https://raafatcoaching.com/src/assets/images/coach/portrait.jpg",
-    "telephone": "+20-100-000-0000",
-    "priceRange": "$$"
-  }
-  </script>
 
 </head>
 <body>
@@ -754,7 +737,7 @@
 
     <div class="floating-actions__menu" id="floating-actions-menu" hidden>
 
-      <ul class="floating-actions__top">
+      <ul>
         <li>
           <a href="https://wa.me/201000000000"
              target="_blank" rel="noopener noreferrer"
@@ -773,14 +756,17 @@
             <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#link"></use></svg>
           </button>
         </li>
+        <li>
+          <button type="button"
+              id="my-custom-open-btn"
+              aria-label="فتح المحادثة مع المساعد الآلي">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#robot"></use></svg>
+          </button>
+        </li>
       </ul>
 
       <!-- تنويه: لا تُغيّر هذا الـ id لأنه مرتبط بسكربت الشات بوت الخارجي -->
-      <button type="button"
-              id="my-custom-open-btn"
-              aria-label="فتح المحادثة مع المساعد الآلي">
-        <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#robot"></use></svg>
-      </button>
+
 
     </div>
   </div>
