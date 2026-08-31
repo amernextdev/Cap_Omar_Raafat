@@ -1,0 +1,8 @@
+# Raafat Coaching — robots.txt
+# الموقع صفحة واحدة (Landing Page)، لذلك ما فيش مسارات كتير للزحف عليها.
+
+User-agent: *
+Allow: /
+Disallow: /about-project.html
+
+Sitemap: https://raafatcoaching.com/sitemap.xml
