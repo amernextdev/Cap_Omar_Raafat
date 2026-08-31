@@ -301,3 +301,13 @@
     font-size: var(--fs-sm);
   }
 }
+
+@media (max-width: 767.98px) {
+  .hero__title {
+    font-size: var(--fs-3xl);
+  }
+
+  .hero__description {
+    font-size: var(--fs-base);
+  }
+}

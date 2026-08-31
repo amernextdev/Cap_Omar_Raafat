@@ -15,8 +15,6 @@
   gap: var(--space-8);
 }
 
-.about__portrait-col--desktop { display: none; }
-
 .about__portrait-frame {
   position: relative;
   max-width: 22rem;
@@ -101,12 +99,17 @@
     gap: var(--space-10);
   }
 
-  .about__portrait-col--mobile { display: none; }
-  .about__portrait-col--desktop {
-    display: block;
+  /* على الديسكتوب: النص أول حاجة بصريًا (order: 1)، والصورة بعده
+     (order: 2) — بدل ما كانت نسختين منفصلتين في الـ HTML */
+  .about__paragraphs {
+    order: 1;
+    flex: 1;
+  }
+
+  .about__portrait-col {
+    order: 2;
     flex: 0 0 34%;
   }
 
-  .about__paragraphs { flex: 1; }
   .about__portrait-frame { max-width: none; }
 }

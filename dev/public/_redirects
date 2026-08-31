@@ -1,0 +1,14 @@
+# Cloudflare Pages — Redirects
+# التوثيق: https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# ملاحظة: HTTPS إجباري و apex/www تلقيح تلقائي غالبًا بيتظبط من
+# إعدادات الدومين على Cloudflare نفسها (Custom Domains). السطر تحت
+# احتياطي فقط، وهيشتغل بس لو الاتنين (www + apex) متوصلين بنفس مشروع الـ Pages.
+
+https://www.raafatcoaching.com/* https://raafatcoaching.com/:splat 301!
+
+# ============================================================
+# صفحة 404 مخصّصة بتتقدَّم تلقائيًا من Cloudflare Pages لأي مسار
+# مش موجود فعليًا (بما إن فيه ملف 404.html في جذر المشروع)،
+# فمفيش داعي لقاعدة catch-all هنا زي مشاريع الـ SPA.
+# ============================================================

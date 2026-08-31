@@ -45,6 +45,28 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* الكارت المميز (highlight: true في pricing.json) — حدود وتوهج بلون
+   الأكسنت الأساسي عشان يلفت النظر كـ"الاختيار الموصى بيه" */
+.pricing__card--highlight {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-accent-glow);
+}
+
+.pricing__badge {
+  position: absolute;
+  top: calc(-1 * var(--space-3));
+  inset-inline: 0;
+  width: fit-content;
+  margin-inline: auto;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+}
+
 .pricing__plan {
   font-family: var(--font-display);
   font-size: var(--fs-lg);

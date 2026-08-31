@@ -105,14 +105,20 @@
   animation: fadeIn var(--transition-base) forwards;
 }
 
+/* حالة الغلق — بتتحط عبر JS (data-closing) قبل ما الـ hidden يتحط،
+   عشان أنيميشن الغلق ياخد وقته الكامل قبل ما العنصر يتشال من العرض خالص */
+.side-menu[data-closing] {
+  animation: fadeOut var(--transition-slow) forwards;
+}
+
 .side-menu__inner {
   position: absolute;
   inset-block: 0;
-  inset-inline-end: 0;
+  inset-inline-start: 0;
   width: min(360px, 88vw);
   height: 100%;
   background: var(--color-bg-elevated);
-  border-inline-start: 1px solid var(--color-border);
+  border-inline-end: 1px solid var(--color-border);
   padding: var(--space-6) var(--space-5);
   display: flex;
   flex-direction: column;
@@ -124,14 +130,24 @@
   animation: slideInPanel var(--transition-slow) forwards;
 }
 
+.side-menu[data-closing] .side-menu__inner {
+  animation: slideOutPanel var(--transition-slow) forwards;
+}
+
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
 
 @keyframes slideInPanel {
   from { transform: translateX(var(--slide-from, 100%)); }
   to { transform: translateX(0); }
 }
 
-/* في صفحة LTR (لو اتفعّلت مستقبلًا) اللوحة تدخل من الشمال بدل اليمين */
+@keyframes slideOutPanel {
+  from { transform: translateX(0); }
+  to { transform: translateX(var(--slide-from, 100%)); }
+}
+
+/* في صفحة LTR (لو اتفعّلت مستقبلًا) اللوحة تدخل/تخرج من الشمال بدل اليمين */
 [dir="ltr"] .side-menu__inner { --slide-from: -100%; }
 
 .side-menu__close { display: flex; justify-content: flex-end; }
@@ -170,6 +186,11 @@
 }
 
 .side-menu__nav-link:hover {
+  color: var(--color-accent);
+  padding-inline-start: var(--space-2);
+}
+
+.side-menu__nav-link.active {
   color: var(--color-accent);
   padding-inline-start: var(--space-2);
 }

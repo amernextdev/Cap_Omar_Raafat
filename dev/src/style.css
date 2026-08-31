@@ -12,7 +12,7 @@
 @import "/src/components/problem/problem.css";
 @import "/src/components/how-it-works/how-it-works.css";
 @import "/src/components/offer/offer.css";
-@import "/src/components/transforms/transforms.css";
+@import "/src/components/transformations/transformations.css";
 @import "/src/components/testimonials/testimonials.css";
 @import "/src/components/pricing/pricing.css";
 @import "/src/components/about/about.css";
@@ -135,7 +135,7 @@ h1, h2, h3 {
 .problem__inner,
 .how__inner,
 .offer__inner,
-.transforms__inner,
+.transformations__inner,
 .testimonials__inner,
 .pricing__inner,
 .about__inner,
@@ -153,7 +153,7 @@ h1, h2, h3 {
   .problem__inner,
   .how__inner,
   .offer__inner,
-  .transforms__inner,
+  .transformations__inner,
   .testimonials__inner,
   .pricing__inner,
   .about__inner,
@@ -165,13 +165,13 @@ h1, h2, h3 {
 }
 
 /* إيقاع رأسي موحّد بين الأقسام */
-.problem, .how, .offer, .transforms,
+.problem, .how, .offer, .transformations,
 .testimonials, .pricing, .about, .faq, .cta {
   padding-block: var(--space-11);
 }
 
 @media (min-width: 1024px) {
-  .problem, .how, .offer, .transforms,
+  .problem, .how, .offer, .transformations,
   .testimonials, .pricing, .about, .faq, .cta {
     padding-block: var(--space-12);
   }
@@ -239,6 +239,6 @@ h1, h2, h3 {
   display: none !important;
 }
 
-html, body {
+html {
   overflow-x: hidden !important;
 }

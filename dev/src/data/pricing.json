@@ -1,0 +1,55 @@
+{
+    "pricing": [
+    {
+      "id": "basic",
+      "plan": "الباقة الأساسية",
+      "priceEGP": "1200",
+      "priceUSD": "40",
+      "locationNote": "السعر بالدولار للعملاء خارج مصر",
+      "highlight": false,
+      "badge": "",
+      "features": [
+        "خطة أكل شهرية مخصصة",
+        "خطة تمرين شهرية مخصصة",
+        "بدون متابعة أسبوعية مباشرة (Self-Guided)",
+        "دعم عبر الرسائل عند الحاجة"
+      ],
+      "ctaText": "ابدأ بالباقة الأساسية",
+      "whatsappLink": "/about-project.html"
+    },
+    {
+      "id": "comprehensive",
+      "plan": "الباقة الشاملة",
+      "priceEGP": "2200",
+      "priceUSD": "70",
+      "locationNote": "السعر بالدولار للعملاء خارج مصر",
+      "highlight": true,
+      "badge": "الأكثر طلبًا",
+      "features": [
+        "خطة أكل وتمرين مخصصة بالكامل",
+        "متابعة أسبوعية على الواتساب",
+        "تعديل الخطة حسب التقدم كل أسبوع",
+        "دعم مباشر في أي استفسار"
+      ],
+      "ctaText": "ابدأ بالباقة الشاملة",
+      "whatsappLink": "/about-project.html"
+    },
+    {
+      "id": "vip",
+      "plan": "باقة النخبة VIP",
+      "priceEGP": "3500",
+      "priceUSD": "110",
+      "locationNote": "السعر بالدولار للعملاء خارج مصر",
+      "highlight": false,
+      "badge": "",
+      "features": [
+        "كل مزايا الباقة الشاملة",
+        "مكالمة فيديو أسبوعية",
+        "دعم يومي مباشر",
+        "أولوية الرد على استفساراتك"
+      ],
+      "ctaText": "ابدأ بباقة النخبة",
+      "whatsappLink": "/about-project.html"
+    }
+  ]
+}

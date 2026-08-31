@@ -13,17 +13,37 @@
   background: var(--color-bg-elevated);
 }
 
+/* موبايل: بدل عمود واحد طويل، الشعار والوصف في الأعلى بعرض كامل ومتوسّطين،
+   ومجموعتا الروابط جنب بعض في صفين بدل ما تترصّ فوق بعضها البعض */
 .footer__inner {
-  padding-block: var(--space-9);
+  padding-block: var(--space-7);
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-8);
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--space-5);
+  row-gap: var(--space-6);
+}
+
+/* أول عنصر في الـ footer (الشعار + الوصف) ياخد عرض السطر كامل ويترصّ في النص
+   مع خط فاصل خفيف تحته يفصله بصرياً عن مجموعات الروابط */
+.footer__inner > :first-child {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
 }
 
 @media (min-width: 768px) {
   .footer__inner {
     grid-template-columns: 1.4fr 1fr 1fr;
     gap: var(--space-6);
+    padding-block: var(--space-9);
+  }
+
+  .footer__inner > :first-child {
+    grid-column: auto;
+    text-align: start;
+    padding-bottom: 0;
+    border-bottom: none;
   }
 }
 
@@ -45,13 +65,25 @@
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
   letter-spacing: var(--ls-wider);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .footer__heading {
+    margin-bottom: var(--space-4);
+  }
 }
 
 .footer__links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .footer__links {
+    gap: var(--space-3);
+  }
 }
 
 .footer__links a {
@@ -67,12 +99,23 @@
 
 .footer__link-icon { width: 0.85em; height: 0.85em; }
 
+/* حقوق النشر: على الموبايل متوسّطة ومسافتها أصغر عشان القسم كله يبقى مضغوط،
+   وترجع لوضعها العادي (يمين المحاذاة الطبيعية) بداية من الديسكتوب */
 .footer__copyright {
   grid-column: 1 / -1;
-  margin-top: var(--space-6);
-  padding-top: var(--space-6);
+  margin-top: var(--space-3);
+  padding-top: var(--space-5);
   border-top: 1px solid var(--color-border);
   font-size: var(--fs-xs);
   color: var(--color-text-disabled);
   line-height: var(--lh-relaxed);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__copyright {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    text-align: start;
+  }
 }

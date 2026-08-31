@@ -11,17 +11,31 @@
 .testimonials__grid { display: flex; flex-direction: column; gap: var(--space-6); }
 
 .testimonials__row {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: var(--space-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--container-padding-mobile);
+  padding-bottom: var(--space-2);
+  /* إخفاء شريط التمرير بصريًا مع إبقائه شغالًا باللمس/الكيبورد */
+  scrollbar-width: none;
 }
 
-@media (min-width: 640px) {
-  .testimonials__row { grid-template-columns: repeat(2, 1fr); }
+.testimonials__row::-webkit-scrollbar { display: none; }
+
+.testimonials__item {
+  flex: 0 0 min(320px, 84vw);
+  scroll-snap-align: center;
 }
 
 @media (min-width: 1024px) {
-  .testimonials__row { grid-template-columns: repeat(3, 1fr); }
+  .testimonials__row {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials__item { flex: initial; }
 }
 
 .testimonials__item {
@@ -69,7 +83,13 @@
   color: var(--color-text-muted);
 }
 
-.testimonials__more-wrap { display: flex; justify-content: center; }
+/* الزرار مخصص للديسكتوب بس — على الموبايل التنقّل بيحصل بالسحب/النقاط،
+   ومفيش داعي لزرار "عرض المزيد" إضافي يزوّد الزحمة */
+.testimonials__more-wrap { display: none; justify-content: center; }
+
+@media (min-width: 1024px) {
+  .testimonials__more-wrap { display: flex; }
+}
 
 .testimonials__more-btn {
   padding: var(--space-3) var(--space-6);
@@ -87,6 +107,8 @@
 }
 
 .testimonials__dots {
+  margin-top: var(--space-6);
+
   display: flex;
   justify-content: center;
   gap: var(--space-2);
@@ -103,4 +125,11 @@
 .testimonials__dot--active {
   background: var(--color-accent);
   width: 22px;
+}
+
+/* نفس مبدأ قسم التحولات: النقاط دليل تنقّل للكاروسيل على الموبايل بس */
+@media (min-width: 1024px) {
+  .testimonials__dots {
+    display: none;
+  }
 }

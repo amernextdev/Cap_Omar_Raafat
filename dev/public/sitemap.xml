@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Raafat Coaching — sitemap.xml
+  الموقع صفحة واحدة (Single Page) وكل الأقسام (hero, problem, offer...)
+  عبارة عن anchors (#) في نفس الصفحة، فمحركات البحث بتتعامل معاها كصفحة
+  واحدة بس. الصفحة about-project.html متعمّد استبعادها لأنها noindex.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://raafatcoaching.com/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

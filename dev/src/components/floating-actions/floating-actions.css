@@ -15,10 +15,6 @@
   /* في RTL العنصر العائم بيتحط ناحية بداية السطر (يمين) بشكل مريح للإبهام */
   inset-inline-start: var(--space-5);
   z-index: var(--z-dropdown);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-3);
 }
 
 .floating-actions__toggle {
@@ -37,16 +33,35 @@
 
 .floating-actions__toggle[aria-expanded="true"] { transform: rotate(45deg); }
 
+/* القائمة بتطفو فوق زرار التبديل بدل ما تكون عضو عادي في نفس تدفق
+   الفليكس — بالشكل ده مكان الزرار يفضل ثابت 100% أيًا كانت حالة
+   القائمة (مفتوحة/مقفولة/بتتحرك)، ومفيش أي إزاحة مفاجئة ليه أبدًا.
+   .floating-actions نفسها position: fixed، وده كافٍ إنها تبقى
+   "containing block" للعنصر ده من غير أي إضافة تانية */
 .floating-actions__menu {
+  position: absolute;
+  bottom: calc(var(--size-badge) + var(--space-3));
+  inset-inline-start: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   animation: floatUp var(--transition-base) both;
 }
 
+/* حالة الغلق — بتتحط عبر JS (data-closing) قبل ما الـ hidden يتحط،
+   عشان أنيميشن الخروج ياخد وقته الكامل قبل ما العنصر يتشال من العرض خالص */
+.floating-actions__menu[data-closing] {
+  animation: floatDown var(--transition-base) forwards;
+}
+
 @keyframes floatUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatDown {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
 }
 
 .floating-actions__top {
@@ -88,6 +103,27 @@
   box-shadow: var(--shadow-lg);
   min-width: 12rem;
   overflow: hidden;
+}
+
+.social-panel__close {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-2) var(--space-2) 0;
+}
+
+.social-panel__close-btn {
+  width: var(--control-height-sm);
+  height: var(--control-height-sm);
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.social-panel__close-btn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
 }
 
 .social-panel__item {
