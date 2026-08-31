@@ -1,0 +1,31 @@
+{
+      "transformations": [
+    {
+      "id": 1,
+      "beforeImage": "/src/assets/images/transformations/one/before_1.{{extension}}",
+      "afterImage": "/src/assets/images/transformations/one/after_1.{{extension}}",
+      "beforeAlt": "أحمد قبل بدء برنامج تخسيس ونحت الجسم مع Raafat Coaching",
+      "afterAlt": "أحمد بعد 4 شهور من المتابعة الأسبوعية مع Raafat Coaching"
+    },
+    {
+      "id": 2,
+      "clientLabel": "منة",
+      "duration": "3 شهور معانا",
+      "resultNote": "خسارة وزن ثابتة بدون رجيم قاسي",
+      "beforeImage": "/src/assets/images/transformations/two/before_2.{{extension}}",
+      "afterImage": "/src/assets/images/transformations/two/after_2.{{extension}}",
+      "beforeAlt": "منة قبل بدء خطة الأكل والتمرين المخصصة مع Raafat Coaching",
+      "afterAlt": "منة بعد 3 شهور من الالتزام بخطتها الشخصية مع Raafat Coaching"
+    },
+    {
+      "id": 3,
+      "clientLabel": "كريم",
+      "duration": "6 شهور معانا",
+      "resultNote": "بناء عضلات وزيادة قوة ملحوظة",
+      "beforeImage": "/src/assets/images/transformations/three/before_3.{{extension}}",
+      "afterImage": "/src/assets/images/transformations/three/after_3.{{extension}}",
+      "beforeAlt": "كريم قبل بدء برنامج بناء العضلات مع Raafat Coaching",
+      "afterAlt": "كريم بعد 6 شهور من خطة التمرين والتغذية مع Raafat Coaching"
+    }
+  ]
+}

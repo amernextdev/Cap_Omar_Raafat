@@ -1,13 +1,804 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dev</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="ar" dir="rtl">
+<head>
+
+  <!-- ===== الترميز والعرض الأساسي (تقني — لا يتغيّر) ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- ===== العنوان والوصف (SEO) ===== -->
+  <title>Raafat Coaching | تخسيس ونحت الجسم أونلاين مع كوتش عمر رأفت</title>
+  <meta name="description" content="خطة أكل وتمرين مخصصة بالكامل من كوتش عمر رأفت، بمتابعة أسبوعية حقيقية على الواتساب. تخسيس ونحت الجسم وبناء عضلات أونلاين بأسلوب علمي ونتائج مستدامة.">
+  <meta name="keywords" content="مدرب لياقة بدنية أونلاين, تخسيس أونلاين, نحت الجسم, بناء عضلات, خطة أكل وتمرين مخصصة, كوتش عمر رأفت, Raafat Coaching, رجيم بمتابعة أسبوعية, تمرين بالبيت, تخسيس بدون رجيم قاسي">
+  <meta name="author" content="كوتش عمر رأفت">
+  <meta name="robots" content="index, follow">
+
+  <!-- ===== الرابط الأساسي (Canonical) — ضع رابط النطاق الفعلي عند النشر ===== -->
+  <link rel="canonical" href="https://raafatcoaching.com/">
+
+  <!-- ===== لون شريط المتصفح (يطابق --color-bg في variables.css) ===== -->
+  <meta name="theme-color" content="#16140F">
+  <meta name="color-scheme" content="dark">
+
+  <!-- ===== الأيقونات (Favicons) — مسارات ملفات، مش محتوى نصي ===== -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+
+  <!-- ===== Open Graph (فيسبوك / واتساب / لينكدإن) ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Raafat Coaching">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:title" content="جسمك، خطتك، نتيجتك | Raafat Coaching">
+  <meta property="og:description" content="خطة أكل وتمرين مخصصة بالكامل ليك، بمتابعة أسبوعية حقيقية على الواتساب. ابدأ رحلتك مع كوتش عمر رأفت.">
+  <meta property="og:image" content="https://raafatcoaching.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raafat Coaching — تدريب لياقة بدنية أونلاين مع كوتش عمر رأفت">
+  <meta property="og:url" content="https://raafatcoaching.com/">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="جسمك، خطتك، نتيجتك | Raafat Coaching">
+  <meta name="twitter:description" content="خطة أكل وتمرين مخصصة بالكامل ليك، بمتابعة أسبوعية حقيقية على الواتساب.">
+  <meta name="twitter:image" content="https://raafatcoaching.com/og-image.jpg">
+
+
+</head>
+<body>
+
+  <!-- =====================================================================
+       الهيدر (Header)
+  ====================================================================== -->
+  <header class="header">
+    <div class="header__inner">
+
+
+
+      <div class="header__actions">
+        <button
+          type="button"
+          class="header__menu-toggle"
+          aria-label="فتح القائمة"
+          aria-expanded="false"
+          aria-controls="side-menu"
+        >
+          <svg class="icon header__menu-icon" aria-hidden="true">
+            <use href="/sprites/solid.svg#bars"></use>
+          </svg>
+          <span class="header__menu-text">القائمة</span>
+        </button>
+
+        <div class="header__cta-wrapper">
+          <a href="#pricing" class="header__cta">ابدأ رحلتك</a>
+        </div>
+      </div>
+      <div class="header__logo">
+        <a href="#" aria-label="العودة للصفحة الرئيسية">
+          <span class="header__logo-text">Raafat Coaching</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       القائمة الجانبية (Side Menu)
+       ملاحظة: id="side-menu" هو اللي هيتربط بمنطق الفتح/الغلق في main.js
+       (عبر aria-controls في زرار الهيدر أعلاه).
+  ====================================================================== -->
+  <aside class="side-menu" id="side-menu" hidden>
+    <div class="side-menu__inner">
+
+      <div class="side-menu__close">
+        <button class="side-menu__close-btn" type="button" aria-label="إغلاق القائمة">
+          <svg class="icon icon--xmark" aria-hidden="true">
+            <use href="/sprites/solid.svg#xmark"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="side-menu__nav-wrapper">
+        <nav class="side-menu__nav" aria-label="القائمة الرئيسية">
+          <ul class="side-menu__nav-list">
+            <li class="side-menu__nav-item"><a href="#hero" class="side-menu__nav-link">الرئيسية</a></li>
+            <li class="side-menu__nav-item"><a href="#howitwork" class="side-menu__nav-link">كيف يعمل</a></li>
+            <li class="side-menu__nav-item"><a href="#transformations" class="side-menu__nav-link">النتائج</a></li>
+            <li class="side-menu__nav-item"><a href="#pricing" class="side-menu__nav-link">الأسعار</a></li>
+            <!-- <li class="side-menu__nav-item"><a href="#about" class="side-menu__nav-link">عن المدرب</a></li> --> <!-- تعليق السطر مقصود -->
+            <li class="side-menu__nav-item"><a href="#faq" class="side-menu__nav-link">الأسئلة الشائعة</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- <button class="side-menu__lang-toggle" id="side-menu-lang-toggle" type="button" aria-label="تغيير لغة الموقع">
+        <div class="side-menu__lang-toggle-left">
+          <span class="side-menu__lang-icon" aria-hidden="true">
+            <svg class="icon icon--globe">
+              <use href="/sprites/solid.svg#globe"></use>
+            </svg>
+          </span>
+          <div class="side-menu__lang-text-group">
+            <span class="side-menu__lang-title">Language</span>
+            <span class="side-menu__lang-sub" id="side-menu-lang-sub">Arabic / العربية</span>
+          </div>
+        </div>
+        <div class="side-menu__lang-badges">
+          <span class="side-menu__lang-badge" id="side-menu-lang-badge-ar" data-lang="ar">AR</span>
+          <span class="side-menu__lang-badge" id="side-menu-lang-badge-en" data-lang="en">EN</span>
+        </div>
+      </button> -->
+
+      <div class="side-menu__cta">
+        <a href="#cta" class="side-menu__cta-link">احجز مكانك دلوقتي</a>
+      </div>
+
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- =====================================================================
+         قسم الهيرو (Hero) — أول ما يظهر للزائر، ويحتوي صورة LCP لذلك
+         استخدمنا loading="eager" و fetchpriority="high" لتسريع ظهورها.
+    ====================================================================== -->
+    <section class="hero" id="hero">
+
+      <picture class="hero__background" aria-hidden="true">
+        <source srcset="src/assets/images/hero-bg/hero-bg.avif" type="image/avif">
+        <source srcset="src/assets/images/hero-bg/hero-bg.webp" type="image/webp">
+        <img
+          src="src/assets/images/hero-bg/hero-bg.jpg"
+          class="hero__background-img"
+          alt="Hero Background"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
+
+      <div class="hero__inner">
+
+        <!-- المحتوى الأساسي: العنوان + الوصف + زر الدعوة للإجراء -->
+        <div class="hero__main">
+          <h1 class="hero__title">
+            خطة أكل وتمرين<br>
+            مبنية على جسمك<br>
+            <span class="hero__title-accent">انت بس</span>
+          </h1>
+
+          <p class="hero__description">بمتابعة أسبوعية حقيقية على الواتساب، هتوصل لهدفك بخطة علمية ومستدامة — مش نسخة من خطة حد تاني.</p>
+
+          <a href="#pricing" class="hero__cta">
+            ابدأ رحلتك دلوقتي
+            <span class="hero__cta-icon" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- لوحة الإحصائيات — id="hero-stats" لتشغيل حركة الظهور التدريجي في main.js -->
+        <ul class="hero__stats" id="hero-stats">
+
+          <li class="hero__stat" data-delay="0">
+            <div class="hero__stat-body">
+              <h3 class="hero__stat-title">سنين خبرة</h3>
+              <p class="hero__stat-description">في التدريب الأونلاين من الألف للياء</p>
+            </div>
+            <span class="hero__stat-badge">+5</span>
+
+          </li>
+
+          <li class="hero__stat" data-delay="1">
+            <div class="hero__stat-body">
+              <h3 class="hero__stat-title">متدرب</h3>
+              <p class="hero__stat-description">وصلوا لهدفهم من كل حتة في العالم</p>
+            </div>
+            <span class="hero__stat-badge">+300</span>
+
+          </li>
+
+          <li class="hero__stat" data-delay="2">
+            <div class="hero__stat-body">
+              <h3 class="hero__stat-title">نسبة نجاح</h3>
+              <p class="hero__stat-description">من عملائنا حققوا الهدف اللي حطوه</p>
+            </div>
+            <span class="hero__stat-badge">90%</span>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم المشكلة (Problem)
+    ====================================================================== -->
+    <section class="problem" id="problem">
+      <div class="problem__inner">
+
+        <!-- عنوان القسم — نفس مكوّن "section-head" المستخدَم في باقي الأقسام -->
+        <div class="section-head">
+          <p class="section-head__eyebrow">ليه بتحاول وملقتش نتيجة؟</p>
+          <h2 class="section-head__title">المشكلة مش فيك... المشكلة في الخطة</h2>
+        </div>
+
+        <!-- شبكة المشكلات: 4 عناصر -->
+        <ul class="problem__grid">
+
+          <li class="problem__item">
+            <span class="problem__icon" aria-hidden="true">
+              <svg class="problem__icon-svg">
+                <use href="/sprites/solid.svg#copy"></use>
+              </svg>
+            </span>
+            <h3 class="problem__item-title">خطط جاهزة منسوخة</h3>
+            <p class="problem__item-text">نفس الأكل ونفس التمرين بيترسل لكل الناس، من غير ما حد يشوف جسمك انت أصلاً.</p>
+          </li>
+
+          <li class="problem__item">
+            <span class="problem__icon" aria-hidden="true">
+              <svg class="problem__icon-svg">
+                <use href="/sprites/solid.svg#robot"></use>
+              </svg>
+            </span>
+            <h3 class="problem__item-title">متابعة آلية بدون حد بيشوفك</h3>
+            <p class="problem__item-text">تطبيق بيبعتلك رسالة كل أسبوع، بس محدش فاهم فعليًا هل الخطة شغالة معاك ولا لأ.</p>
+          </li>
+
+          <li class="problem__item">
+            <span class="problem__icon" aria-hidden="true">
+              <svg class="problem__icon-svg">
+                <use href="/sprites/solid.svg#triangle-exclamation"></use>
+              </svg>
+            </span>
+            <h3 class="problem__item-title">وعود مش واقعية</h3>
+            <p class="problem__item-text">وعد بخسارة كيلوهات في أيام معدودة، وبعدها الجسم يرجع تاني زي الأول.</p>
+          </li>
+
+          <li class="problem__item">
+            <span class="problem__icon" aria-hidden="true">
+              <svg class="problem__icon-svg">
+                <use href="/sprites/solid.svg#compass"></use>
+              </svg>
+            </span>
+            <h3 class="problem__item-title">مفيش خطة للاستمرار</h3>
+            <p class="problem__item-text">بتوصل لهدفك وبعدين محدش علّمك تكمل بنفسك، فبترجع تاني للنقطة الأولى.</p>
+          </li>
+
+        </ul>
+
+        <div class="section-end">
+          <p class="section-end__text">لو حاسس إن الكلام ده بيحصلك، إنت مش لوحدك — والحل أبسط مما تتخيل.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم كيف يعمل (How It Works)
+    ====================================================================== -->
+    <section class="how" id="howitwork">
+      <div class="how__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">طريقة العمل</p>
+          <h2 class="section-head__title">
+            من أول تقييم لجسمك<br>
+            لحد ما توصل لهدفك
+          </h2>
+        </div>
+
+        <ul class="how__steps">
+
+          <li class="how__step">
+            <div class="how__step-num">01</div>
+            <h3 class="how__step-title">التقييم الأولي</h3>
+            <p class="how__step-text">تملى استمارة شاملة بالوزن والقياسات والأهداف، وممكن مكالمة تعريفية قصيرة لو محتاجين نفهم يومك أكتر.</p>
+          </li>
+
+          <li class="how__step">
+            <div class="how__step-num">02</div>
+            <h3 class="how__step-title">بناء خطتك</h3>
+            <p class="how__step-text">بنصمملك خطة أكل حسب دخلك وذوقك، وخطة تمرين تناسب مستواك ومكانك سواء جيم أو بيت.</p>
+          </li>
+
+          <li class="how__step">
+            <div class="how__step-num">03</div>
+            <h3 class="how__step-title">المتابعة الأسبوعية</h3>
+            <p class="how__step-text">كل أسبوع تبعتلنا وزنك وقياساتك وصور تقدمك على الواتساب، وبنعدل خطتك حسب النتيجة الفعلية.</p>
+          </li>
+
+          <li class="how__step">
+            <div class="how__step-num">04</div>
+            <h3 class="how__step-title">الاستقرار والاستقلالية</h3>
+            <p class="how__step-text">في آخر الأسابيع بنعلّمك تعدل خطتك بنفسك، عشان تكمل لوحدك حتى بعد ما تخلص معانا.</p>
+          </li>
+
+          <!-- ===== يمكن إضافة خطوات أكثر حسب طبيعة الهوية المؤسسية وبيانات المدرب ===== -->
+
+        </ul>
+
+        <div class="section-end">
+          <p class="section-end__text">أربع مراحل بس، ومفيش خطوة زيادة عن اللازم.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم العرض (Offer)
+    ====================================================================== -->
+    <section class="offer" id="offer">
+      <div class="offer__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">إيه اللي هتاخده بالظبط</p>
+          <h2 class="section-head__title">مش خطة بس، دي منظومة كاملة ليك انت</h2>
+        </div>
+
+        <ul class="offer__path">
+
+          <li class="offer__stage">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#utensils"></use></svg>
+            <h3 class="offer__stage-title">خطة أكل مخصصة</h3>
+            <p class="offer__stage-text">مبنية على جسمك، دخلك، وذوقك في الأكل — مش نسخة من خطة حد تاني.</p>
+          </li>
+
+          <li class="offer__stage">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#dumbbell"></use></svg>
+            <h3 class="offer__stage-title">خطة تمرين على مستواك</h3>
+            <p class="offer__stage-text">سواء في الجيم أو في البيت، الخطة بتتصمم على أساس إمكانياتك ووقتك المتاح.</p>
+          </li>
+
+          <li class="offer__stage">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#comment-dots"></use></svg>
+            <h3 class="offer__stage-title">متابعة أسبوعية حقيقية</h3>
+            <p class="offer__stage-text">تقرير أسبوعي على الواتساب، مع تعديل فعلي للخطة حسب تقدمك الحقيقي.</p>
+          </li>
+
+          <li class="offer__stage">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#chart-line"></use></svg>
+            <h3 class="offer__stage-title">أساس علمي في كل قرار</h3>
+            <p class="offer__stage-text">كل تفصيلة في خطتك ليها سبب علمي في التغذية والتمرين، مش موضة عابرة.</p>
+          </li>
+
+          <!-- ===== يمكن إضافة خدمات أكثر حسب طبيعة الهوية المؤسسية وبيانات المدرب ===== -->
+
+        </ul>
+
+        <div class="section-end">
+          <p class="section-end__text">الهدف مش تدفع وتستنى، الهدف إن كل حاجة تتبني ليك انت بس.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم التحولات (transformations) — عرض قبل / بعد
+    ====================================================================== -->
+    <section class="transformations" id="transformations">
+      <div class="transformations__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">نتايج حقيقية</p>
+          <h2 class="section-head__title">شوف الفرق بنفسك</h2>
+        </div>
+<!-- القائمة الرئيسية التي سنحقن الكروت بداخلها -->
+<ul class="transformations__cards"></ul>
+
+<!-- قالب الكارت المخفي -->
+<template id="card-template">
+  <li class="transformations__card" data-transform="">
+    <div class="transformations__card-images">
+      
+      <!-- قسم قبل -->
+      <div class="transformations__img-wrap transformations__img-wrap--before">
+        <picture>
+          <source class="img-before-avif" srcset="" type="image/avif">
+          <source class="img-before-webp" srcset="" type="image/webp">
+          <img class="img-before-jpg" src="" alt="" loading="lazy">
+        </picture>
+        <span class="transformations__badge transformations__badge--before">قبل</span>
+      </div>
+      
+      <div class="transformations__divider" aria-hidden="true"><span>VS</span></div>
+      
+      <!-- قسم بعد -->
+      <div class="transformations__img-wrap transformations__img-wrap--after">
+        <picture>
+          <source class="img-after-avif" srcset="" type="image/avif">
+          <source class="img-after-webp" srcset="" type="image/webp">
+          <img class="img-after-jpg" src="" alt="" loading="lazy">
+        </picture>
+        <span class="transformations__badge transformations__badge--after">بعد</span>
+      </div>
+
+    </div>
+  </li>
+</template>
+
+        <!-- نقاط التنقل (Dots) — أزرار حقيقية عشان تبقى قابلة للتشغيل من الكيبورد -->
+        <div class="transformations__dots" role="tablist" aria-label="التنقل بين كروت التحولات">
+          <button type="button" class="transformations__dot transformations__dot--active" role="tab" aria-selected="true" aria-label="عرض كارت التحول 1"></button>
+          <button type="button" class="transformations__dot" role="tab" aria-selected="false" aria-label="عرض كارت التحول 2"></button>
+          <button type="button" class="transformations__dot" role="tab" aria-selected="false" aria-label="عرض كارت التحول 3"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم آراء العملاء (Testimonials)
+    ====================================================================== -->
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">آراء العملاء</p>
+          <h2 class="section-head__title">كلامهم مش كلامنا</h2>
+        </div>
+
+        <!-- ملاحظة: محتوى التقييمات بيتحقن ديناميكيًا من data.json عبر main.js -->
+        <div class="testimonials__grid">
+<!-- القائمة الرئيسية التي سنحقن الآراء بداخلها -->
+<ul class="testimonials__row" id="testimonials-row"></ul>
+
+<!-- قالب التقييم المخفي -->
+<template id="testimonial-template">
+  <li class="testimonials__item">
+    <p class="testimonials__quote"></p>
+    <div class="testimonials__author">
+      <span class="testimonials__author-name"></span>
+      <span class="testimonials__author-meta"></span>
+    </div>
+  </li>
+</template>
+
+
+          <!-- <div class="testimonials__more-wrap">
+            <button type="button" class="testimonials__more-btn testimonials__more-btn--show" aria-controls="testimonials-row" aria-expanded="false">عرض المزيد (X+)</button>
+            <button type="button" class="testimonials__more-btn testimonials__more-btn--hide" aria-controls="testimonials-row" aria-expanded="true" hidden>عرض أقل</button>
+          </div> -->
+        </div>
+
+        <div class="testimonials__dots" role="tablist" aria-label="التنقل بين آراء العملاء">
+          <button type="button" class="testimonials__dot testimonials__dot--active" role="tab" aria-selected="true" aria-label="عرض المجموعة 1"></button>
+          <button type="button" class="testimonials__dot" role="tab" aria-selected="false" aria-label="عرض المجموعة 2"></button>
+          <button type="button" class="testimonials__dot" role="tab" aria-selected="false" aria-label="عرض المجموعة 3"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم الأسعار (Pricing)
+    ====================================================================== -->
+    <section class="pricing" id="pricing">
+      <div class="pricing__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">الباقات</p>
+          <h2 class="section-head__title">اختار الباقة المناسبة لهدفك</h2>
+        </div>
+
+        <!-- ملاحظة: كروت الباقات بتتحقن ديناميكيًا من data.json عبر main.js -->
+<!-- القائمة الرئيسية للباقات -->
+<ul class="pricing__cards"></ul>
+
+<!-- قالب الباقة السعرية المخفي -->
+<template id="pricing-template">
+  <li class="pricing__card">
+    <span class="pricing__badge" hidden></span>
+    <div class="pricing__plan"></div>
+    <div class="pricing__amount">
+      <div class="pricing__price">
+        <span class="price-egp"></span> <span class="pricing__price-unit">جنيه</span><span class="pricing__price-slash"> / </span><span class="pricing__price-usd-inline"></span>
+      </div>
+      <div class="pricing__price-location-note"></div>
+    </div>
+    
+    <!-- قائمة المزايا -->
+    <ul class="pricing__features">
+      <!-- سيتم حقن عناصر الـ li للمزايا هنا ديناميكياً -->
+    </ul>
+    
+    <a href="" class="pricing__cta-btn" target="_blank" rel="noopener noreferrer"></a>
+  </li>
+</template>
+        <div class="section-end">
+          <p class="section-end__text">مش متأكد أنهي باقة تناسبك؟ ابعتلنا رسالة على الواتساب ونساعدك تختار.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم عن المدرب (About)
+    ====================================================================== -->
+    <section class="about" id="about">
+      <div class="about__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">عن المدرب</p>
+          <h2 class="section-head__title">كوتش عمر رأفت</h2>
+        </div>
+
+        <div class="about__content">
+
+          <!-- الصورة الشخصية — نسخة واحدة بس؛ ترتيبها البصري (قبل النص
+               على الموبايل، بعده على الديسكتوب) بيتحدد بـ order في about.css -->
+          <div class="about__portrait-col">
+            <div class="about__portrait-frame">
+              <picture>
+                <source srcset="/src/assets/images/trainer/thetrainer.avif" type="image/avif">
+                <source srcset="/src/assets/images/trainer/thetrainer.webp" type="image/webp">
+                <img src="/src/assets/images/trainer/thetrainer.jpg" alt="كوتش عمر رأفت، مؤسس Raafat Coaching" loading="lazy">
+              </picture>
+              <div class="about__portrait-annotation">
+                <span class="about__portrait-num">+5</span>
+                <span class="about__portrait-label">سنين خبرة في التدريب الأونلاين</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__paragraphs">
+            <div class="about__paragraph about__paragraph--who"> <!-- مين هو المدرب -->
+              <h3 class="about__paragraph-title">مين هو كوتش عمر رأفت؟</h3>
+              <p class="about__paragraph-text">مدرب لياقة بدنية أونلاين متخصص في تخسيس ونحت الجسم وبناء العضلات، بخبرة أكتر من 5 سنين في التدريب عن بُعد لعملاء من كل حتة في العالم.</p>
+            </div>
+            <div class="about__paragraph about__paragraph--philosophy"> <!-- فلسفة المدرب -->
+              <h3 class="about__paragraph-title">الفلسفة اللي بيشتغل بيها</h3>
+              <p class="about__paragraph-text">أكبر سبب فشل في رحلة اللياقة مش نقص الإرادة، هو خطة مش مناسبة للشخص أصلاً — إما صعبة جدًا، أو عامة جدًا، أو من غير متابعة حقيقية. عشان كده كل خطة بتتبني من الصفر.</p>
+            </div>
+            <div class="about__paragraph about__paragraph--why"> <!-- ليه بيعمل كدا -->
+              <h3 class="about__paragraph-title">ليه بيعمل كده</h3>
+              <p class="about__paragraph-text">عشان يكون المدرب اللي الناس بتوصّي بيه فعليًا لأصحابها، مش بس بسبب التسويق، لكن بسبب نتائج حقيقية متابَعة أسبوع بأسبوع.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="section-end">
+          <p class="section-end__text">لو دورت كتير على مدرب يفهمك، يمكن دلوقتي لقيته.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم الأسئلة الشائعة (FAQ)
+         ملاحظة: كرّر بنية <li class="faq__item"> لكل سؤال، وغيّر الرقم في
+         faq-answer-1 / aria-controls بحيث يكون كل عنصر بمعرّف (id) مختلف.
+    ====================================================================== -->
+    <section class="faq" id="faq">
+      <div class="faq__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">أسئلة بتتكرر كتير</p>
+          <h2 class="section-head__title">عندك سؤال؟ يمكن جاوبنا عليه هنا</h2>
+        </div>
+
+        <!-- ملاحظة: عناصر الأسئلة بتتحقن ديناميكيًا من data.json عبر main.js -->
+<!-- الحاوية الرئيسية للأسئلة الشائعة -->
+<div class="faq__list"></div>
+
+<!-- قالب السؤال والجواب المخفي -->
+<template id="faq-template">
+  <div class="faq__item">
+    <button class="faq__btn" type="button" aria-expanded="false" aria-controls="">
+      <span class="faq__question-text"></span>
+      <span class="faq__btn-icon" aria-hidden="true">
+        <svg class="icon icon--chevron-down"><use href="/sprites/solid.svg#chevron-down"></use></svg>
+      </span>
+    </button>
+    <div class="faq__answer" id="" hidden></div>
+  </div>
+</template>
+
+
+        <div class="section-end">
+          <p class="section-end__text">لو سؤالك مش موجود، ابعتلنا على الواتساب وهنرد عليك بنفسنا.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         قسم الدعوة النهائية للإجراء (CTA)
+    ====================================================================== -->
+    <section class="cta" id="cta">
+      <div class="cta__inner">
+
+        <div class="section-head">
+          <p class="section-head__eyebrow">جاهز تبدأ؟</p>
+          <h2 class="section-head__title">جسمك، خطتك، نتيجتك — يلا نبدأ</h2>
+        </div>
+
+        <a href="#pricing" class="cta__btn">احجز مكانك دلوقتي</a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       الفوتر (Footer)
+  ====================================================================== -->
+  <footer class="footer" id="main-footer">
+    <div class="footer__inner">
+
+      <!-- هوية البراند -->
+      <div class="footer__brand">
+        <a href="#" class="footer__logo" aria-label="العودة للصفحة الرئيسية">Raafat Coaching</a>
+        <p class="footer__tagline">جسمك، خطتك، نتيجتك</p>
+      </div>
+
+      <!-- روابط التنقل -->
+      <nav class="footer__nav" aria-label="روابط تذييل الصفحة">
+        <h2 class="footer__heading">التنقل</h2>
+        <ul class="footer__links">
+          <li><a href="#hero">الرئيسية</a></li>
+          <li><a href="#problem">المشكلة</a></li>
+          <li><a href="#offer">العرض</a></li>
+          <li><a href="#howitwork">كيف نعمل</a></li>
+          <li><a href="#transformations">النتائج</a></li>
+          <li><a href="#about">عن المدرب</a></li>
+          <li><a href="#pricing">الأسعار</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </nav>
+
+      <!-- روابط التواصل -->
+      <div class="footer__contact">
+        <h2 class="footer__heading">تواصل</h2>
+        <ul class="footer__links">
+          <li>
+            <a href="/about-project.html" target="_blank" rel="noopener noreferrer">
+              WhatsApp <svg class="icon footer__link-icon" aria-hidden="true"><use href="/sprites/solid.svg#arrow-up-right"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="/about-project.html" target="_blank" rel="noopener noreferrer">
+              Facebook <svg class="icon footer__link-icon" aria-hidden="true"><use href="/sprites/solid.svg#arrow-up-right"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="/about-project.html" target="_blank" rel="noopener noreferrer">
+              Instagram <svg class="icon footer__link-icon" aria-hidden="true"><use href="/sprites/solid.svg#arrow-up-right"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="/about-project.html" target="_blank" rel="noopener noreferrer">
+              TikTok <svg class="icon footer__link-icon" aria-hidden="true"><use href="/sprites/solid.svg#arrow-up-right"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="/about-project.html" target="_blank" rel="noopener noreferrer">
+              YouTube <svg class="icon footer__link-icon" aria-hidden="true"><use href="/sprites/solid.svg#arrow-up-right"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="/about-project.html" target="_blank" rel="noopener noreferrer">
+              Email <svg class="icon footer__link-icon" aria-hidden="true"><use href="/sprites/solid.svg#arrow-up-right"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__copyright">
+        &copy; 2026 Raafat Coaching. جميع الحقوق محفوظة.<br>
+        هذا الموقع نموذج تجريبي (Demo) تم تطويره لأغراض العرض التقني في بورتفوليو مطور. اسم المدرب، البيانات، الأسعار، والشهادات جميعها وهمية ولا تمثل شخصًا حقيقيًا.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       الأزرار العائمة (تواصل سريع + شات بوت)
+  ====================================================================== -->
+  <div class="floating-actions">
+    <button type="button"
+            class="floating-actions__toggle"
+            aria-label="فتح خيارات التواصل"
+            aria-expanded="false"
+            aria-controls="floating-actions-menu">
+      <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#plus"></use></svg>
+    </button>
+
+    <div class="floating-actions__menu" id="floating-actions-menu" hidden>
+
+      <ul>
+        <li>
+          <a href="/about-project.html"
+             target="_blank" rel="noopener noreferrer"
+             class="floating-actions__item floating-actions__item--whatsapp"
+             aria-label="تواصل عبر واتساب">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/brands.svg#whatsapp"></use></svg>
+          </a>
+        </li>
+        <li>
+          <button type="button"
+                  class="floating-actions__item floating-actions__item--social"
+                  aria-haspopup="true"
+                  aria-controls="social-panel"
+                  aria-expanded="false"
+                  aria-label="عرض جميع حسابات التواصل الاجتماعي">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#link"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button"
+              id="my-custom-open-btn"
+              aria-label="فتح المحادثة مع المساعد الآلي">
+            <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#robot"></use></svg>
+          </button>
+        </li>
+      </ul>
+
+      <!-- تنويه: لا تُغيّر هذا الـ id لأنه مرتبط بسكربت الشات بوت الخارجي -->
+
+
+    </div>
+  </div>
+
+  <!-- لوحة حسابات التواصل الاجتماعي -->
+  <div class="social-panel"
+       id="social-panel"
+       role="menu"
+       aria-hidden="true"
+       hidden>
+    <div class="social-panel__close">
+      <button class="social-panel__close-btn" type="button" aria-label="إغلاق قائمة التواصل الاجتماعي">
+        <svg class="icon icon--xmark" aria-hidden="true"><use href="/sprites/solid.svg#xmark"></use></svg>
+      </button>
+    </div>
+    <ul class="social-panel__list">
+      <li class="social-panel__item" role="none">
+        <svg class="icon" aria-hidden="true"><use href="/sprites/brands.svg#facebook"></use></svg>
+        <a href="/about-project.html" role="menuitem" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </li>
+      <li class="social-panel__item" role="none">
+        <svg class="icon" aria-hidden="true"><use href="/sprites/brands.svg#instagram"></use></svg>
+        <a href="/about-project.html" role="menuitem" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </li>
+      <li class="social-panel__item" role="none">
+        <svg class="icon" aria-hidden="true"><use href="/sprites/brands.svg#tiktok"></use></svg>
+        <a href="/about-project.html" role="menuitem" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </li>
+      <li class="social-panel__item" role="none">
+        <svg class="icon" aria-hidden="true"><use href="/sprites/brands.svg#youtube"></use></svg>
+        <a href="/about-project.html" role="menuitem" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </li>
+      <li class="social-panel__item" role="none">
+        <svg class="icon" aria-hidden="true"><use href="/sprites/solid.svg#envelope"></use></svg>
+        <a href="/about-project.html" role="menuitem" target="_blank" rel="noopener noreferrer">Email</a>
+      </li>
+      <!-- ===== أضف حسابات أخرى هنا بنفس البنية ===== -->
+    </ul>
+  </div>
+
+  <!-- تنويه: لا تُغيّر هذا الـ id لأنه مرتبط بسكربت الشات بوت الخارجي -->
+  <div id="chatbot-container"></div>
+
+  <!-- =====================================================================
+       مرجع سريع للـ Hooks المطلوبة في main.js (كل الأزرار التفاعلية
+       بالفعل معاها aria-expanded / aria-controls / hidden جاهزة، والمطلوب
+       من الجافاسكريبت بس تبديل هذه القيم عند التفاعل):
+
+       - .header__menu-toggle          → يفتح/يقفل  #side-menu  (يبدّل hidden + aria-expanded)
+       - .side-menu__close-btn         → يقفل      #side-menu
+       - #side-menu-lang-toggle        → يبدّل اللغة (ويحدّث #side-menu-lang-sub + الـ badges)
+       - #hero-stats [data-delay]      → تشغيل حركة ظهور تدريجي حسب data-delay
+       - .transformations__dot[role=tab]    → تبديل .transformations__dot--active + عرض .transformations__card المطابق
+       - .testimonials__more-btn--show/--hide → إظهار/إخفاء بقية #testimonials-row + تبديل الزرارين
+       - .testimonials__dot[role=tab]  → نفس منطق transformations dots
+       - .faq__btn                     → toggle aria-expanded + إظهار/إخفاء .faq__answer المرتبط بـ aria-controls
+       - .floating-actions__toggle     → يفتح/يقفل #floating-actions-menu
+       - .floating-actions__item--social → يفتح/يقفل #social-panel (و aria-hidden عليه)
+       - #my-custom-open-btn / #chatbot-container → لا تُغيَّر، خاصة بسكربت الشات بوت
+  ====================================================================== -->
+  <script type="module" src="/src/main.js"></script>
+
+</body>
 </html>
