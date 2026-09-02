@@ -1,0 +1,57 @@
+# Cloudflare Pages — Headers
+# التوثيق: https://developers.cloudflare.com/pages/configuration/headers/
+
+# ============================================================
+# هيدرز أمان عامة — تتطبق على كل الصفحات
+# ============================================================
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  X-XSS-Protection: 1; mode=block
+
+# ============================================================
+# ملفات Vite المبنية (JS/CSS بأسماء فيها hash) — كاش طويل جدًا
+# لأن أي تعديل في الكود بيغيّر اسم الملف تلقائيًا (immutable)
+# ============================================================
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ============================================================
+# الأيقونات (sprites) والصور — كاش طويل
+# ============================================================
+/sprites/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/src/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ============================================================
+# ملفات JSON بيانات الشات بوت — كاش متوسط (ممكن تتغيّر بمحتوى)
+# ============================================================
+/src/data/*
+  Cache-Control: public, max-age=3600
+
+# ============================================================
+# الصفحات الرئيسية (HTML) — بدون كاش طويل، دايمًا يتحقق من التحديث
+# ============================================================
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# ============================================================
+# صفحة about-project.html — مستبعدة من الفهرسة (Demo/Portfolio فقط)
+# ============================================================
+/about-project.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate
+
+# ============================================================
+# صفحة 404 — بدون كاش، وبدون فهرسة
+# ============================================================
+/404.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate
