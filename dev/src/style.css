@@ -242,3 +242,14 @@ h1, h2, h3 {
 html {
   overflow-x: hidden !important;
 }
+
+a, button, input, textarea, select, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+}
+a:focus, button:focus, input:focus, .card:focus {
+    outline: none;
+}
+a:focus-visible, button:focus-visible, .card:focus-visible {
+    outline: 2px solid var(--color-accent); 
+    outline-offset: 3px;
+}
